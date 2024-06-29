@@ -1,4 +1,3 @@
-
 filename_work = "phone.txt"
 
 
@@ -12,7 +11,7 @@ def work_with_phonebook():
 
         elif choice==2:
             last_name=input('Фамилия: ')
-            print(find_by_lastname(phone_book,last_name))
+            print(find_by_lastname(phone_book, last_name))
 
         elif choice==3:
             number= input('Телефон: ')
@@ -27,9 +26,6 @@ def work_with_phonebook():
             print(delete_by_lastname(phone_book,lastname))
 
         elif choice==6:
-            # user_data=input('new data ')
-            # add_user(phone_book,user_data)
-            # write_txt('phonebook.txt',phone_book)
             break
         choice=show_menu()
 
@@ -78,6 +74,7 @@ def find_by_lastname(phone_book, last_name):        # 2. Поиск по фам�
             return phone_book[i]
     return "Не найден"
 
+
 def find_by_number(phone_book, number):         # 3. Поиск по номеру
     for i in range(len(phone_book)):
         if phone_book[i]['Телефон'] == number:
@@ -90,11 +87,9 @@ def add_user(phone_book, user_data):      # 4. Добавляем пользов
 
 def delete_by_lastname(phone_book, last_name):      # 5. Удаление пользователя
     for i in range(len(phone_book)):
-        if phone_book[i] == last_name:
-            del(i) 
+        if phone_book[i]['Фамилия'] == last_name:
+            del(phone_book[i]) 
         return "Не найден"
         
-
-
 
 work_with_phonebook()
